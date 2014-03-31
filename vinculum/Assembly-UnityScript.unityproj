@@ -48,8 +48,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ClickableObject.js" />
      <Compile Include="Assets\Scripts\Environment.js" />
-     <Compile Include="Assets\Scripts\GameObject.js" />
+     <Compile Include="Assets\Scripts\GameData.js" />
      <Compile Include="Assets\Scripts\NonPlayableCharacter.js" />
+     <Compile Include="Assets\Scripts\Test.js" />
      <Compile Include="Assets\Scripts\UserInterface.js" />
      <Compile Include="Assets\Scripts\ignorethis.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\CameraRelativeControl.js" />
