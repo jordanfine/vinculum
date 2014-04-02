@@ -1,13 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ClickableObject.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameData.js">
     <Files>
-      <File FileName="Assets/Scripts/Test.js" Line="3" Column="1" />
-      <File FileName="Assets/Scripts/GameData.js" Line="30" Column="96" />
+      <File FileName="Assets/Scripts/Test.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameData.js" Line="27" Column="43" />
       <File FileName="Assets/Scripts/ClickableObject.js" Line="28" Column="2" />
       <File FileName="Assets/Scripts/Environment.js" Line="9" Column="2" />
-      <File FileName="Assets/Scripts/NonPlayableCharacter.js" Line="14" Column="148" />
-      <File FileName="Assets/Scripts/UserInterface.js" Line="12" Column="2" />
+      <File FileName="Assets/Scripts/NonPlayableCharacter.js" Line="16" Column="2" />
+      <File FileName="Assets/Scripts/UserInterface.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
