@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{85DEEC83-0192-97E8-087A-E5D6244B9976}") = "vinculum", "Assembly-CSharp-firstpass-vs.csproj", "{1574529C-115C-1C2E-B267-A70D355B469F}"
 EndProject
+Project("{85DEEC83-0192-97E8-087A-E5D6244B9976}") = "vinculum", "Assembly-CSharp-vs.csproj", "{37787E2F-7BEA-F170-958F-E0FAD49D5D9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{1574529C-115C-1C2E-B267-A70D355B469F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1574529C-115C-1C2E-B267-A70D355B469F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1574529C-115C-1C2E-B267-A70D355B469F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37787E2F-7BEA-F170-958F-E0FAD49D5D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37787E2F-7BEA-F170-958F-E0FAD49D5D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37787E2F-7BEA-F170-958F-E0FAD49D5D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37787E2F-7BEA-F170-958F-E0FAD49D5D9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																GlobalSection(MonoDevelopProperties) = preSolution
+																																																						GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

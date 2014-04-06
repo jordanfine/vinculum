@@ -43,3 +43,5 @@ EditorBuildSettings:
     path: Assets/dialogue.unity
   - enabled: 1
     path: Assets/dialogue.unity
+  - enabled: 1
+    path: Assets/match_game.unity
