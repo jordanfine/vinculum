@@ -43,3 +43,7 @@ EditorBuildSettings:
     path: Assets/dialogue.unity
   - enabled: 1
     path: Assets/dialogue.unity
+  - enabled: 1
+    path: Assets/mansion_interior_exit.unity
+  - enabled: 1
+    path: Assets/mansion_minigame.unity
