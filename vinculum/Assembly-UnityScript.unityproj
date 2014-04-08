@@ -46,19 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ClickableObject.js" />
-     <Compile Include="Assets\Scripts\DestroyParticle.js" />
-     <Compile Include="Assets\Scripts\Environment.js" />
-     <Compile Include="Assets\Scripts\GameData.js" />
-     <Compile Include="Assets\Scripts\LightControl.js" />
-     <Compile Include="Assets\Scripts\NonPlayableCharacter.js" />
-     <Compile Include="Assets\Scripts\Pickup.js" />
-     <Compile Include="Assets\Scripts\RandomLook.js" />
-     <Compile Include="Assets\Scripts\StrobeLight.js" />
-     <Compile Include="Assets\Scripts\Test.js" />
-     <Compile Include="Assets\Scripts\TextChange.js" />
-     <Compile Include="Assets\Scripts\UserInterface.js" />
-     <Compile Include="Assets\Scripts\ignorethis.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\CameraRelativeControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FirstPersonControl.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FollowTransform.js" />

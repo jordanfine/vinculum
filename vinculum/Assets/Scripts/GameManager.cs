@@ -8,26 +8,40 @@ public class GameManager : MonoBehaviour
 	//------------------------------------------------
 	//Number of consecutive matches player must make for each card type to complete turn
 	public int NumMatches = 2;
-	
+
+	public int numCardMatches=14;
 	//Lose interval - amount of time in seconds to pause before clearing cards and resetting turn (When player makes a mistake)
-	public float LoseInterval = 0.5f;
+	public float LoseInterval = 0.1f;
 	
 	//Win interval - amount of time in seconds to pause before clearing cards and resetting turn (When player matches 3)
-	public float WinInterval = 0.5f;
-	
+	public float WinInterval = 0.1f;
+
+	public string portalDestination;
 	//-----------------------------------------	
 	
 	//Private properties
 	//Reference to all card objects in the scene
 	private GameObject[] CardObjects = null;
+
+	//public GameData data;
+	public GameObject dialogueBox;
+	public GameObject dialogue;
+	public GUIStyle dialogueStyle;
+
+	private GameObject gameData;
+	private GameData gd;
 	
 	//Internal Turn Step Counter (keeps track of how many cards picked so far
 	private int TurnStep = 0;
-	
+
+	public bool activeInHierarchy;
+
+	public bool talking;
 	//List of cards picked this turn so far
 	private GameObject[] SelectedCards = null;
 
-	private string DoctorMessage = "The Doctor is FREAaAAkY";
+	private string currentDialogue = "";
+
 	
 	//Input enabled for this machine
 	//private bool InputEnabled = true;
@@ -38,9 +52,14 @@ public class GameManager : MonoBehaviour
 	//-----------------------------------------
 	void Start()
 	{
-		//Get all card objects
+		dialogueBox = GameObject.Find("DialogueBox");
+		dialogue = GameObject.Find("Dialogue");
+
+
+		//This retrieves the GameData object from our GameObject
+
 		CardObjects = GameObject.FindGameObjectsWithTag("Card") as GameObject[];
-		
+//		Scene instance = (Scene)Resources.LoadLevel ("lemonade_stand", typeof(Scene));
 		//Get mouse cursor render component
 		//CursorRender = GameObject.FindGameObjectWithTag("Cursor").GetComponent<MeshRenderer>();
 		
@@ -48,11 +67,22 @@ public class GameManager : MonoBehaviour
 		SelectedCards = new GameObject[NumMatches];
 		
 		Shuffle();
+
+		gameData = GameObject.Find ("GameData");
+		gd = gameData.GetComponent<UserInterface>().data;
+		GameObject.DontDestroyOnLoad(gameData);
+
+		//Get all card objects
+
 	}
 	//-----------------------------------------
 	void Update()
 	{
+
 		HandleInput();
+
+		//dialogueBox.SetActive(true);
+		//dialogue.SetActive(true);
 	}
 	//-----------------------------------------
 	//Resets and Shuffles Cards
@@ -118,6 +148,8 @@ public class GameManager : MonoBehaviour
 		Screen.showCursor = InputEnabled = bEnabled;
 	}*/
 	//-----------------------------------------
+
+
 	//Function to pick a card and update turn
 	public void PickCard(GameObject SelectedCard)
 	{
@@ -139,6 +171,7 @@ public class GameManager : MonoBehaviour
 	//Function to Update Turn
 	public void UpdateTurn(GameObject PickedCard)
 	{
+
 		//Add card to selected array
 		SelectedCards[TurnStep] = PickedCard;
 
@@ -153,6 +186,7 @@ public class GameManager : MonoBehaviour
 		//If picked more than one card in sequence, then check is the same
 		if(SelectedCards[TurnStep-1].GetComponent<Card>().name != SelectedCards[TurnStep-2].GetComponent<Card>().name)
 		{
+
 			//Is not same. Player made mistake. Reset turn for next player.
 			StartCoroutine(LoseTurn());
 			return;
@@ -161,12 +195,73 @@ public class GameManager : MonoBehaviour
 		//Player made successful match. Is end of turn?
 		if(TurnStep >= NumMatches)
 		{
-			if(SelectedCards[TurnStep-1].GetComponent<Card>().name == "doctor_card")
-				Debug.Log (DoctorMessage);
+			dialogueBox.renderer.enabled = true;
+			//dialogue.renderer.enabled=true;
+			if(SelectedCards[TurnStep-1].GetComponent<Card>().name == "doctor_card"){
+				//Debug.Log (DoctorMessage);
+				numCardMatches-=2;
+				Debug.Log (numCardMatches);
+				//talking = true;
+				currentDialogue="Boy: The Doctor is like a superhero. Even though he doesn’t have a cape, he saving all of our lives here! I want to be just like him one day. But with a cape.";
+			}
+			if(SelectedCards[TurnStep-1].GetComponent<Card>().name == "light_card"){
+				//Debug.Log (DoctorMessage);
+				//dialogueBox.renderer.enabled = true;
+				//talking = true;
+				numCardMatches-=2;
+				currentDialogue="Boy: I know it looks kinda like a smushed lightning bug, but that’s suppose to be light. The light means everyone is happy. So it’s safe to play again!";
+			}
+			if(SelectedCards[TurnStep-1].GetComponent<Card>().name == "key_card"){
+				//Debug.Log (DoctorMessage);
+				//dialogueBox.renderer.enabled = true;
+				//talking = true;
+				numCardMatches-=2;
+				currentDialogue="Boy: That’s the key to the lighthouse. Only the keyholder is allowed to have it. One time one of my friends found one of them on the ground…";
+			}
+			if(SelectedCards[TurnStep-1].GetComponent<Card>().name == "mansion_card"){
+				//Debug.Log (DoctorMessage);
+				//dialogueBox.renderer.enabled = true;
+				//talking = true;
+				numCardMatches-=2;
+				currentDialogue="Boy: All the most important people in town live there. You have to be SUPER important, though. Like, not bake cookies once for your class kind of important. That was a disappointing day.";
+			}
+			if(SelectedCards[TurnStep-1].GetComponent<Card>().name == "needle_card"){
+				//Debug.Log (DoctorMessage);
+				//dialogueBox.renderer.enabled = true;
+				numCardMatches-=2;
+				//talking = true;
+				currentDialogue="Boy: We all get the cure when we grow up! My mom, who knows a lot of stuff since the nice council people give her lots of things, says that the cure makes all the rashes go away!";
+			}
+
+			/*if(SelectedCards[TurnStep-1].GetComponent<Card>().name == "lighthouse_card"){
+				numCardMatches--;
+			}
+			if(SelectedCards[TurnStep-1].GetComponent<Card>().name == "blank_card"){
+				numCardMatches--;
+			}*/
+			 
+
+			if(numCardMatches==2 ){
+				currentDialogue="Mom: That's ENOUGH!";
+
+				StartCoroutine(redirect());
+				gd.currentLevel++;
+				//Debug.Log (gd.currentLevel);
+			}
 			//Player made all matches. Move to next turn
 			StartCoroutine(WinTurn());
 		}
 	}
+
+	public IEnumerator redirect()
+	{
+		yield return new WaitForSeconds(3.00F);
+		
+		Application.LoadLevel (portalDestination);
+
+		//gd.currentLevel++;
+		//Debug.Log (gd.currentLevel);
+		}
 	//-----------------------------------------
 	//Ends turn as loss condition
 	public IEnumerator LoseTurn()
@@ -236,4 +331,14 @@ public class GameManager : MonoBehaviour
 		//EnableInput(true);
 	}
 	//-----------------------------------------
+	void OnGUI() {
+
+		if(Input.GetKey("space")){
+			currentDialogue="";
+		//dialogueBox.renderer.enabled = false;
+		}
+		GUI.Label (new Rect (150, 500, 900, 336), currentDialogue,dialogueStyle);
+		Debug.Log (gd.currentLevel);
+	}
 }
+

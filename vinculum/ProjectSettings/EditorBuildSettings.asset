@@ -6,29 +6,31 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/test_level.unity
-  - enabled: 1
     path: Assets/main_menu.unity
-  - enabled: 1
-    path: Assets/doctor_office.unity
-  - enabled: 1
-    path: Assets/dialogue.unity
-  - enabled: 1
-    path: Assets/dock.unity
-  - enabled: 1
-    path: Assets/dialogue.unity
-  - enabled: 1
-    path: Assets/cutscene.unity
-  - enabled: 1
-    path: Assets/boat.unity
+  - enabled: 0
+    path: Assets/main_menu.unity
+  - enabled: 0
+    path: Assets/main_menu.unity
   - enabled: 1
     path: Assets/bar.unity
   - enabled: 1
-    path: Assets/lighthouse_interior.unity
+    path: Assets/boat.unity
+  - enabled: 1
+    path: Assets/cutscene.unity
+  - enabled: 1
+    path: Assets/dialogue.unity
+  - enabled: 1
+    path: Assets/doctor_office.unity
+  - enabled: 1
+    path: Assets/lemonade_stand.unity
+  - enabled: 1
+    path: Assets/dock.unity
   - enabled: 1
     path: Assets/lighthouse_basement.unity
   - enabled: 1
     path: Assets/lighthouse_exterior.unity
+  - enabled: 1
+    path: Assets/lighthouse_interior.unity
   - enabled: 1
     path: Assets/main_street.unity
   - enabled: 1
@@ -36,12 +38,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/mansion_interior_entrance.unity
   - enabled: 1
+    path: Assets/mansion_interior_exit.unity
+  - enabled: 1
     path: Assets/mansion_interior_office.unity
   - enabled: 1
-    path: Assets/lemonade_stand.unity
-  - enabled: 1
-    path: Assets/dialogue.unity
-  - enabled: 1
-    path: Assets/dialogue.unity
+    path: Assets/mansion_minigame.unity
   - enabled: 1
     path: Assets/match_game.unity
+  - enabled: 1
+    path: Assets/lemonade_stand2.unity
