@@ -9,7 +9,7 @@ public class GameData extends ScriptableObject {
 
 	function GameData(){
 		//ARB. NUMBER USED...FIX 10 TO WHATEVER AMOUNT OF CHARACTERS...MAYBE CREATE SEPERATE NPC ARRAY?
-		currentLevel = 5;
+		currentLevel = 0;
 	}
 		
 }

@@ -142,17 +142,17 @@ MonoBehaviour:
   portalId: 0
   objectId: 0
   dialogueArray:
-  - Hmmm...Looks like a memory game. I was always good at these.
-  - Hmmm...Looks like a memory game. I was always good at these.
-  - Hmmm...Looks like a memory game. I was always good at these.
-  - Hmmm...Looks like a memory game. I was always good at these.
-  - Hmmm...Looks like a memory game. I was always good at these.
-  - Let's play!
-  - Let's play!
-  - Let's play!
-  - Let's play!
-  - Let's play!
-  lockedOn: 01010101010000000000
+  - 'Edith: Hmmm...Looks like a memory game. I was always good at these.'
+  - 'Edith: Hmmm...Looks like a memory game. I was always good at these.'
+  - 'Edith: Hmmm...Looks like a memory game. I was always good at these.'
+  - 'Edith: Hmmm...Looks like a memory game. I was always good at these.'
+  - 'Edith: Hmmm...Looks like a memory game. I was always good at these.'
+  - 'Edith: Probably shouldn''t try to play again...'
+  - 'Edith: Probably shouldn''t try to play again...'
+  - 'Edith: Probably shouldn''t try to play again...'
+  - 'Edith: Probably shouldn''t try to play again...'
+  - 'Edith: Probably shouldn''t try to play again...'
+  lockedOn: 01010101010001010101
 --- !u!60 &151336615
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -420,9 +420,9 @@ MonoBehaviour:
       the art on the cards means. You in?"
     - 'Boy: Ummm...I think...wellllll...yeah!'
   - scene:
-    - Back for more lemonade already?
+    - 'Boy: Umm...Uh...Umm...'
   - scene:
-    - Back for more lemonade already?
+    - 'Boy: Back for more lemonade already?'
   - scene:
     - Back for more lemonade already?
   - scene:
@@ -953,9 +953,12 @@ MonoBehaviour:
   - scene:
     - "Edith: Oh, I\u2019m not bothered. We were having fun."
     - 'Mom: Really, I insist you hear no more of his stories.'
-  - scene: []
-  - scene: []
-  - scene: []
+  - scene:
+    - 'Mom: Run along now, dear.'
+  - scene:
+    - 'Mom: Run along now, dear.'
+  - scene:
+    - 'Mom: Run along now, dear.'
   isTalking: 0
 --- !u!114 &1538899088
 MonoBehaviour:
@@ -1176,6 +1179,7 @@ GameObject:
   - 4: {fileID: 2086237579}
   - 212: {fileID: 2086237580}
   - 114: {fileID: 2086237581}
+  - 60: {fileID: 2086237582}
   m_Layer: 0
   m_Name: Pitcher
   m_TagString: Untagged
@@ -1233,14 +1237,94 @@ MonoBehaviour:
   portalId: 0
   objectId: 0
   dialogueArray:
-  - 
-  - 
-  - 
-  - 
-  - Mmm lemonade...just what I need.
-  - Mmm lemonade...just what I need.
-  - Mmm lemonade...just what I need.
-  - Mmm lemonade...just what I need.
-  - Mmm lemonade...just what I need.
-  - Mmm lemonade...just what I need.
+  - 'Edith: Mmm lemonade...just what I need.'
+  - 'Edith: Mmm lemonade...just what I need.'
+  - 'Edith: Mmm lemonade...just what I need.'
+  - 'Edith: Mmm lemonade...just what I need.'
+  - 'Edith: Mmm lemonade...just what I need.'
+  - 'Edith: Mmm lemonade...just what I need.'
+  - 'Edith: Mmm lemonade...just what I need.'
+  - 'Edith: Mmm lemonade...just what I need.'
+  - 'Edith: Mmm lemonade...just what I need.'
+  - 'Edith: Mmm lemonade...just what I need.'
   lockedOn: 01010101010101010101
+--- !u!60 &2086237582
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2086237578}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: .294999987, y: -1.04499996}
+      - {x: .394999981, y: -1.10500002}
+      - {x: .444999993, y: -1.10500002}
+      - {x: .654999971, y: -1.44499993}
+      - {x: .924999952, y: -1.505}
+      - {x: .954999983, y: -1.43499994}
+      - {x: .954999983, y: -1.30499995}
+      - {x: .954999983, y: -1.30499995}
+      - {x: .875, y: -1.23500001}
+      - {x: .754999995, y: -1.245}
+      - {x: .664999962, y: -1.07499993}
+      - {x: .61500001, y: -.935000002}
+      - {x: .654999971, y: -.784999967}
+      - {x: .604999959, y: -.734999955}
+      - {x: .504999995, y: -.664999962}
+      - {x: .514999986, y: -.534999967}
+      - {x: .644999981, y: -.435000002}
+      - {x: .654999971, y: -.324999988}
+      - {x: .664999962, y: -.234999999}
+      - {x: .745000005, y: .00499999989}
+      - {x: .754999995, y: .144999996}
+      - {x: .754999995, y: .435000002}
+      - {x: .714999974, y: .584999979}
+      - {x: .555000007, y: .834999979}
+      - {x: .524999976, y: 1.07499993}
+      - {x: .555000007, y: 1.245}
+      - {x: .234999999, y: 1.38499999}
+      - {x: .0649999976, y: 1.52499998}
+      - {x: -.13499999, y: 1.52499998}
+      - {x: -.185000002, y: 1.48500001}
+      - {x: -.204999998, y: 1.375}
+      - {x: -.375, y: 1.34500003}
+      - {x: -.504999995, y: 1.29499996}
+      - {x: -.644999981, y: 1.21499991}
+      - {x: -.63499999, y: 1.125}
+      - {x: -.63499999, y: .875}
+      - {x: -.764999986, y: .63499999}
+      - {x: -.814999998, y: .494999975}
+      - {x: -.824999988, y: .0949999988}
+      - {x: -.814999998, y: -.00499999989}
+      - {x: -.694999993, y: -.275000006}
+      - {x: -.625, y: -.38499999}
+      - {x: -.584999979, y: -.534999967}
+      - {x: -.644999981, y: -.61500001}
+      - {x: -.714999974, y: -.774999976}
+      - {x: -.824999988, y: -.86500001}
+      - {x: -.914999962, y: -.875}
+      - {x: -.954999983, y: -.935000002}
+      - {x: -.954999983, y: -1.05499995}
+      - {x: -.854999959, y: -1.14499998}
+      - {x: -.745000005, y: -1.125}
+      - {x: -.694999993, y: -1.08499992}
+      - {x: -.61500001, y: -.964999974}
+      - {x: -.494999975, y: -.974999964}
+      - {x: -.514999986, y: -1.10500002}
+      - {x: -.61500001, y: -1.23500001}
+      - {x: -.714999974, y: -1.23500001}
+      - {x: -.814999998, y: -1.375}
+      - {x: -.824999988, y: -1.41499996}
+      - {x: -.724999964, y: -1.505}
+      - {x: -.534999967, y: -1.505}
+      - {x: -.424999982, y: -1.33499992}
+      - {x: -.275000006, y: -.974999964}
+      - {x: .0350000001, y: -.995000005}
+    - - {x: -.0850000009, y: -.814999998}
+      - {x: -.214999989, y: -.805000007}
+      - {x: -.24499999, y: -.714999974}
+      - {x: .13499999, y: -.724999964}
+      - {x: .214999989, y: -.834999979}

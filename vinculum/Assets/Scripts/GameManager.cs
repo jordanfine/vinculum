@@ -1,4 +1,6 @@
 ﻿//Singleton class to manage game progress
+/* The JS files need to be in the standard assets folder - assembly-unityscript-firstpass- because they 
+ are compiled before the c sharp files. that is the only way c sharp can community with the JS GameData gameobject*/
 using UnityEngine;
 using System.Collections;
 
@@ -65,8 +67,9 @@ public class GameManager : MonoBehaviour
 		
 		//Created selected card array
 		SelectedCards = new GameObject[NumMatches];
-		
-		Shuffle();
+
+		//shuffles cards. necessary? 
+		//Shuffle();
 
 		gameData = GameObject.Find ("GameData");
 		gd = gameData.GetComponent<UserInterface>().data;
@@ -112,6 +115,9 @@ public class GameManager : MonoBehaviour
 	//Handle user input
 	public void HandleInput()
 	{
+		//make sure camera is in orthographic view or raycast doesn't work
+		//gets position of mouse and casts a ray from that position down to check if a collider is hit
+		//if it is hit, it picks the card and updates the turn
 
 				if (Input.GetMouseButtonDown (0)) {
 					float dist = transform.position.z - Camera.main.transform.position.z;
@@ -129,26 +135,7 @@ public class GameManager : MonoBehaviour
 						}
 				}
 		}
-		/*//Generate ray from touch position
-		Ray R = Camera.main.ScreenPointToRay(TapPosition);
 		
-		//Get hits in scene to detect card selection
-		RaycastHit[] Hits;
-		
-		Hits = Physics.RaycastAll(R);
-		
-		//Cycle through hits*/
-
-	
-	//-----------------------------------------
-	//Function to enable/disable input
-	/*public void EnableInput(bool bEnabled = true)
-	{
-		//Set input enabled flag and show/hide cursor graphic
-		Screen.showCursor = InputEnabled = bEnabled;
-	}*/
-	//-----------------------------------------
-
 
 	//Function to pick a card and update turn
 	public void PickCard(GameObject SelectedCard)
@@ -193,6 +180,7 @@ public class GameManager : MonoBehaviour
 		}
 		
 		//Player made successful match. Is end of turn?
+		//Displays dialogue for successful match
 		if(TurnStep >= NumMatches)
 		{
 			dialogueBox.renderer.enabled = true;
@@ -253,22 +241,20 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	//these methods delay the flipping/removing/redirecting
 	public IEnumerator redirect()
 	{
 		yield return new WaitForSeconds(3.00F);
 		
 		Application.LoadLevel (portalDestination);
 
-		//gd.currentLevel++;
-		//Debug.Log (gd.currentLevel);
+
 		}
 	//-----------------------------------------
 	//Ends turn as loss condition
 	public IEnumerator LoseTurn()
 	{
-		//Disable input
-		//EnableInput(false);
-		
+	
 		//Wait for lost interval
 		yield return new WaitForSeconds(LoseInterval);
 		
@@ -283,14 +269,12 @@ public class GameManager : MonoBehaviour
 		//Restart turn
 		StartTurn();
 		
-		//EnableInput(true);
+
 	}
 	//-----------------------------------------
 	//Ends turn as win condition
 	public IEnumerator WinTurn()
 	{
-		//Disable input
-		//EnableInput(false);
 		
 		//Wait for lost interval
 		yield return new WaitForSeconds(WinInterval);
@@ -328,9 +312,10 @@ public class GameManager : MonoBehaviour
 			StartTurn();
 		}
 		
-		//EnableInput(true);
+
 	}
 	//-----------------------------------------
+	//puts the dialogue on the screen.
 	void OnGUI() {
 
 		if(Input.GetKey("space")){
@@ -338,7 +323,7 @@ public class GameManager : MonoBehaviour
 		//dialogueBox.renderer.enabled = false;
 		}
 		GUI.Label (new Rect (150, 500, 900, 336), currentDialogue,dialogueStyle);
-		Debug.Log (gd.currentLevel);
+		//Debug.Log (gd.currentLevel);
 	}
 }
 
