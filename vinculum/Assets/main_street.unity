@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: 1
   portalDestination: bar
+  portalId: 0
   objectId: 0
   dialogueArray:
   - 
@@ -209,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: 1
   portalDestination: mansion_exterior
+  portalId: 0
   objectId: 0
   dialogueArray:
   - 
@@ -334,8 +336,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 961999213}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0338764191, y: 1.02694273, z: 0}
-  m_LocalScale: {x: 1.08623016, y: 1.07192123, z: 1}
+  m_LocalPosition: {x: -.132196426, y: .911267757, z: 0}
+  m_LocalScale: {x: 3.29166746, y: 3.24830079, z: 1}
   m_Children: []
   m_Father: {fileID: 299093730}
 --- !u!212 &961999215
@@ -402,6 +404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: 1
   portalDestination: lighthouse_exterior
+  portalId: 0
   objectId: 0
   dialogueArray:
   - 
@@ -434,6 +437,7 @@ GameObject:
   - 4: {fileID: 1547949156}
   - 60: {fileID: 1547949155}
   - 114: {fileID: 1547949154}
+  - 114: {fileID: 1547949157}
   m_Layer: 0
   m_Name: lemstandPortal
   m_TagString: Untagged
@@ -454,6 +458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: 1
   portalDestination: lemonade_stand
+  portalId: 0
   objectId: 0
   dialogueArray:
   - 
@@ -487,3 +492,14 @@ Transform:
   m_LocalScale: {x: 1.88749945, y: 1.87499928, z: 1}
   m_Children: []
   m_Father: {fileID: 299093730}
+--- !u!114 &1547949157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1547949153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70733557dafc43acad6352b73be640a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

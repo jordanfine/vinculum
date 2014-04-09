@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: 1
   portalDestination: dock
+  portalId: 0
   objectId: 0
   dialogueArray:
   - 

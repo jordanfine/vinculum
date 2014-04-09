@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 	//Reference to all card objects in the scene
 	private GameObject[] CardObjects = null;
 
+	public AudioClip cardflip;
 	//public GameData data;
 	public GameObject dialogueBox;
 	public GameObject dialogue;
@@ -131,8 +132,10 @@ public class GameManager : MonoBehaviour
 								//Play step
 								PickCard (hit.collider.gameObject);
 								UpdateTurn (hit.collider.gameObject);
+
 								//return;
 						}
+
 				}
 		}
 		
@@ -140,9 +143,11 @@ public class GameManager : MonoBehaviour
 	//Function to pick a card and update turn
 	public void PickCard(GameObject SelectedCard)
 	{
-		//Pick card
-		SelectedCard.SendMessage("SetCardState", Card.CARD_STATE.CARD_REVEALED, SendMessageOptions.DontRequireReceiver);
-	}
+		AudioSource.PlayClipAtPoint(cardflip, transform.position);
+				//Pick card
+				SelectedCard.SendMessage ("SetCardState", Card.CARD_STATE.CARD_REVEALED, SendMessageOptions.DontRequireReceiver);
+		   
+		}
 	//-----------------------------------------
 	//Function to start new turn for local player
 	public void StartTurn()
