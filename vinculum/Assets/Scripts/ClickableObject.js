@@ -3,19 +3,23 @@
 //Portal would be any object that progresses you through the game. 
 var portal : boolean;
 var portalDestination : String;
-var portalId : int;
+private var portalId : int;
 
 //This would be the Id of a object that is clickable but not a portal
 var objectId : int;
 
 //This is the GameObject that we bind the Data to
-var gameData : GameObject;
+private var gameData : GameObject;
 
 //This is the physical data
-var gd : GameData; 
+private var gd : GameData; 
+var dialogueArray: String[] = new String[3];
 
 private var dialogueBox : GameObject;
 private var dialogue : GameObject;
+private var currentText : String = "";
+
+var lockedOn: boolean[] = new boolean[3];
 
 function Start () {
 	//This finds the GameObject with all of our data
@@ -39,12 +43,36 @@ function Update () {
 
 }
 
+function DisplayText(){
+	currentText = dialogueArray[gd.currentLevel];
+	currentText = currentText + "\n[Press Spacebar to Continue]";
+}
+
+function HideText(){
+	currentText = "";
+	gd.object = false;
+}
+
+function OnGUI() {
+	var e : Event = Event.current;
+	if (e.isKey) {
+		if((e.Equals (Event.KeyboardEvent ("space"))) && gd.object){
+			HideText();
+		}
+	}
+	GUI.Label (Rect (75, 500, 1050, 336), currentText,gd.dialogueStyle);
+}
+
 function OnMouseDown () {
-	if(portal){
-		gd.talking = false;
+	if(portal && !lockedOn[gd.currentLevel]){
+		gd.object = false;
 		Application.LoadLevel(portalDestination);		
 	}
 	else {
-		Debug.Log(gd.characters[objectId].name);	
+		gd.object = true;
+		DisplayText();	
 	}
 }
+
+
+

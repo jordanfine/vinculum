@@ -116,10 +116,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: 1
   portalDestination: doctor_office
-  portalId: 1
   objectId: 0
-  gameData: {fileID: 0}
-  gd: {fileID: 0}
+  dialogueArray:
+  - 
+  - 
+  - 
+  lockedOn: 00000000000000000000
 --- !u!212 &178710525
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -362,7 +364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 0}
-  currentDialogue: 
   dialogueStyle:
     m_Name: 
     m_Normal:
@@ -422,13 +423,6 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  moreConversation: 0
-  isEdithSpeaking: 0
-  currentEdithCounter: 0
-  currentNPC: 0
-  currentNPCLevel: 0
-  currentNPCsceneID: 0
-  currentNPCsceneCounter: 0
 --- !u!4 &1243353638
 Transform:
   m_ObjectHideFlags: 0

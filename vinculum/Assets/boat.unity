@@ -285,10 +285,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: 1
   portalDestination: main_street
-  portalId: 0
   objectId: 0
-  gameData: {fileID: 0}
-  gd: {fileID: 0}
+  dialogueArray:
+  - 
+  - 
+  - 
+  lockedOn: 00000000000000000000
 --- !u!58 &1627706901
 CircleCollider2D:
   m_ObjectHideFlags: 0

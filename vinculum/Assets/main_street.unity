@@ -205,10 +205,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: 1
   portalDestination: bar
-  portalId: 0
   objectId: 0
-  gameData: {fileID: 0}
-  gd: {fileID: 0}
+  dialogueArray:
+  - 
+  - 
+  - 
+  lockedOn: 00000000000000000000
 --- !u!58 &820810260
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -415,10 +417,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: 1
   portalDestination: lighthouse_exterior
-  portalId: 0
   objectId: 0
-  gameData: {fileID: 0}
-  gd: {fileID: 0}
+  dialogueArray:
+  - 
+  - 
+  - 
+  lockedOn: 00000000000000000000
 --- !u!58 &897377597
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -495,10 +499,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: 1
   portalDestination: lemonade_stand
-  portalId: 0
   objectId: 0
-  gameData: {fileID: 0}
-  gd: {fileID: 0}
+  dialogueArray:
+  - 
+  - 
+  - 
+  lockedOn: 00
 --- !u!58 &1059930926
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -625,10 +631,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: 1
   portalDestination: mansion_exterior
-  portalId: 0
   objectId: 0
-  gameData: {fileID: 0}
-  gd: {fileID: 0}
+  dialogueArray:
+  - 
+  - 
+  - 
+  lockedOn: 00000000000000000000
 --- !u!58 &1717237217
 CircleCollider2D:
   m_ObjectHideFlags: 0
